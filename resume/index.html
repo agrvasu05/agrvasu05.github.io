@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vasu Agrawal · Résumé</title>
+<meta name="description" content="Vasu Agrawal: final-year B.Tech IT student. Software engineering and business development résumé.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://agrvasu05.github.io/resume/">
+<meta property="og:title" content="Vasu Agrawal · Résumé">
+<meta property="og:description" content="Software engineering and business development: what I've built, shipped and sold.">
+<meta property="og:image" content="https://agrvasu05.github.io/poster.jpg">
+<meta name="theme-color" content="#f6f4fb">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect x=%223%22 y=%223%22 width=%2210%22 height=%2210%22 rx=%222%22 transform=%22rotate(45 8 8)%22 fill=%22%23ea4b50%22/%3E%3C/svg%3E">
+<style>
+  @font-face { font-family: "Sora"; src: url("../fonts/Sora-VF.ttf") format("truetype"); font-weight: 100 800; font-display: swap; }
+  @font-face { font-family: "JetBrains Mono"; src: url("../fonts/JetBrainsMono-VF.ttf") format("truetype"); font-weight: 100 800; font-display: swap; }
+  :root {
+    --bg: #f6f4fb; --paper: #ffffff; --ink: #1c1833; --ink-2: #3b3557; --muted: #6b6489; --rule: rgba(28, 24, 51, .11);
+    --coral: #ea4b50; --violet: #7b6be0; --mint: #22a77d; --sky: #3f8de6; --term: #16132a; --term-ink: #e7e3fa;
+    --accent: var(--violet);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #100e1b; --paper: #17142a; --ink: #f2effb; --ink-2: #d4cfe9; --muted: #9e97bd; --rule: rgba(242, 239, 251, .11);
+      --coral: #ff6468; --violet: #a395ff; --mint: #4fd6a9; --sky: #6fb3ff; --term: #0b0a14; }
+  }
+  body[data-role="bd"] { --accent: var(--coral); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font: 16.5px/1.6 "Sora", ui-sans-serif, system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  a { color: inherit; }
+  .mono { font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; }
+  .wrap { width: min(1040px, 100% - 36px); margin: 0 auto; }
+
+  header.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 14px; height: 64px; }
+  .brand { font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 9px; white-space: nowrap; }
+  .brand b { width: 10px; height: 10px; background: var(--coral); border-radius: 2px; transform: rotate(45deg); }
+
+  /* the role switch */
+  .switch { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; background: var(--paper); border: 1px solid var(--rule);
+    border-radius: 999px; padding: 4px; font-size: 13.5px; font-weight: 600; }
+  .switch button { position: relative; z-index: 1; border: 0; background: none; color: var(--muted); font: inherit; padding: 8px 16px; cursor: pointer; border-radius: 999px; white-space: nowrap; transition: color .3s ease; }
+  .switch button[aria-pressed="true"] { color: #fff; }
+  .switch .knob { position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px); border-radius: 999px; background: var(--accent);
+    transition: transform .45s cubic-bezier(.3, 1.4, .5, 1), background .3s ease; }
+  body[data-role="bd"] .switch .knob { transform: translateX(100%); }
+  .switch button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .hero { padding: 64px 0 34px; display: grid; grid-template-columns: 1fr 1.05fr; gap: 44px; align-items: center; }
+  .eyebrow { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: clamp(38px, 5.4vw, 66px); line-height: 1; letter-spacing: -.045em; font-weight: 760; margin: 14px 0 18px; }
+  h1 .role { display: block; color: var(--accent); transition: color .3s ease; }
+  .intro { color: var(--ink-2); font-size: 17.5px; max-width: 32em; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 999px; border: 1.5px solid var(--ink); text-decoration: none;
+    font-weight: 600; font-size: 14.5px; transition: transform .2s ease, background .2s ease, color .2s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.solid { background: var(--ink); color: var(--bg); }
+  .btn svg { width: 15px; height: 15px; }
+
+  /* SDE: a terminal you can type into */
+  .term { background: var(--term); color: var(--term-ink); border-radius: 16px; overflow: hidden; box-shadow: 0 24px 60px -24px rgba(28, 24, 51, .45);
+    font-size: 13.5px; line-height: 1.65; }
+  .term .bar { display: flex; gap: 7px; padding: 12px 14px; background: rgba(255, 255, 255, .05); }
+  .term .bar i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; } .term .bar i:nth-child(2) { background: #febc2e; } .term .bar i:nth-child(3) { background: #28c840; }
+  .term .bar span { margin-left: auto; font-size: 11.5px; opacity: .55; }
+  .term .out { padding: 14px 18px 4px; height: 300px; overflow-y: auto; white-space: pre-wrap; }
+  .term .out .p { color: #8fe3bf; } .term .out .k { color: #b7aaff; } .term .out .d { opacity: .6; } .term .out a { color: #ffd08a; }
+  .term form { display: flex; gap: 8px; padding: 6px 18px 16px; align-items: center; }
+  .term form label { color: #8fe3bf; }
+  .term input { flex: 1; background: transparent; border: 0; color: inherit; font: inherit; outline: none; caret-color: #8fe3bf; min-width: 0; }
+
+  /* BD: the first campaign as a funnel */
+  .funnel { background: var(--paper); border: 1px solid var(--rule); border-radius: 16px; padding: 22px 22px 18px; box-shadow: 0 24px 60px -30px rgba(28, 24, 51, .35); }
+  .funnel h3 { font-size: 15px; letter-spacing: -.01em; }
+  .funnel .sub { font-size: 12.5px; color: var(--muted); margin-bottom: 16px; }
+  .stage { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: center; margin-bottom: 11px; font-size: 13.5px; }
+  .stage .bar { grid-column: 1 / -1; height: 12px; border-radius: 6px; background: var(--bg); overflow: hidden; }
+  .stage .bar i { display: block; height: 100%; width: 0; border-radius: 6px; background: var(--c); transition: width 1.2s cubic-bezier(.2, .8, .1, 1); }
+  .stage b { font-variant-numeric: tabular-nums; font-size: 15px; }
+  .funnel .note { font-size: 12px; color: var(--muted); border-top: 1px dashed var(--rule); padding-top: 12px; margin-top: 14px; }
+
+  body[data-role="sde"] [data-show="bd"], body[data-role="bd"] [data-show="sde"] { display: none !important; }
+  body[data-role="sde"] .hero [data-show~="sde"], body[data-role="bd"] .hero [data-show~="bd"] { animation: swap .55s cubic-bezier(.2, .8, .1, 1) both; }
+  body[data-role="sde"] main [data-show~="sde"], body[data-role="bd"] main [data-show~="bd"] { animation: swap .55s cubic-bezier(.2, .8, .1, 1) both; }
+  @keyframes swap { from { opacity: 0; transform: translateY(12px); } }
+
+  section { padding: 56px 0 0; }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-top: 1.5px solid var(--ink); padding-top: 14px; margin-bottom: 22px; }
+  .sec-head h2 { font-size: 24px; letter-spacing: -.03em; }
+  .sec-head span { font-size: 12px; color: var(--muted); letter-spacing: .12em; text-transform: uppercase; }
+
+  .item { display: grid; grid-template-columns: 170px 1fr; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
+  .item .when { font-size: 12.5px; color: var(--muted); }
+  .item h3 { font-size: 19px; letter-spacing: -.02em; line-height: 1.25; }
+  .item h3 small { font-weight: 500; color: var(--muted); font-size: 14px; }
+  .item ul { margin: 10px 0 0 18px; color: var(--ink-2); }
+  .item li { margin-bottom: 5px; }
+  .item li::marker { color: var(--accent); }
+  .item .stack { margin-top: 10px; font-size: 12px; color: var(--muted); }
+  .item b.num { color: var(--ink); }
+
+  .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .skill { background: var(--paper); border: 1px solid var(--rule); border-radius: 14px; padding: 16px 18px; }
+  .skill h4 { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chips span { font-size: 13px; padding: 5px 10px; border-radius: 8px; background: var(--bg); }
+
+  .cta { margin: 70px 0 30px; border-radius: 22px; padding: clamp(28px, 5vw, 48px); background: var(--ink); color: var(--bg);
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 22px; }
+  .cta h2 { font-size: clamp(24px, 3.4vw, 38px); letter-spacing: -.035em; line-height: 1.08; max-width: 18ch; }
+  .cta .btn { border-color: var(--bg); }
+  .cta .btn.solid { background: var(--bg); color: var(--ink); }
+  footer { padding: 14px 0 40px; font-size: 12.5px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+  @media (max-width: 820px) {
+    .hero { grid-template-columns: 1fr; padding-top: 40px; }
+    .item { grid-template-columns: 1fr; gap: 6px; }
+    .skills { grid-template-columns: 1fr; }
+    .brand span { display: none; }
+    .switch button { padding: 8px 12px; font-size: 12.5px; }
+    .term .out { height: 240px; }
+  }
+  @media print {
+    header.top, .term, .funnel, .cta, .switch { display: none !important; }
+    body { background: #fff; }
+  }
+</style>
+</head>
+<body data-role="sde">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><b></b><span>Vasu Agrawal</span></a>
+    <div class="switch" role="group" aria-label="Show résumé for">
+      <span class="knob" aria-hidden="true"></span>
+      <button type="button" data-role="sde" aria-pressed="true">Software Engineering</button>
+      <button type="button" data-role="bd" aria-pressed="false">Business Development</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <div class="eyebrow mono">Résumé · B.Tech IT '27 · Noida, India</div>
+      <h1>Vasu Agrawal<span class="role" data-show="sde">builds and ships.</span><span class="role" data-show="bd">opens doors.</span></h1>
+      <p class="intro" data-show="sde">Final-year IT student who writes C++ for algorithms and Python and JavaScript for everything else: scraping pipelines, automation, web apps and video systems that run on a schedule.</p>
+      <p class="intro" data-show="bd">I find the right companies, reach the person who decides, and build the systems that make outreach repeatable and measurable. Every number below is from work I ran myself.</p>
+      <div class="meta">
+        <a class="btn solid" data-show="sde" href="Vasu_Agrawal_SDE_Resume.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Download PDF</a>
+        <a class="btn solid" data-show="bd" href="Vasu_Agrawal_BD_Resume.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/></svg>Download PDF</a>
+        <a class="btn" href="mailto:agrvasu05@gmail.com">agrvasu05@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/vasu-agrawal-ba985628b">LinkedIn</a>
+        <a class="btn" href="https://github.com/agrvasu05">GitHub</a>
+      </div>
+    </div>
+
+    <div data-show="sde">
+      <div class="term mono" id="term">
+        <div class="bar"><i></i><i></i><i></i><span>vasu@jiit ~ zsh</span></div>
+        <div class="out" id="out" aria-live="polite"></div>
+        <form id="prompt" autocomplete="off"><label for="cmd">❯</label><input id="cmd" aria-label="Type a command, for example help" placeholder="type help"></form>
+      </div>
+    </div>
+    <div data-show="bd">
+      <div class="funnel" id="funnel">
+        <h3>My first outbound campaign</h3>
+        <div class="sub mono">built and run by me · October 2026</div>
+        <div class="stage" style="--c:#7b6be0"><span>Hiring startups screened</span><b data-n="108">0</b><div class="bar"><i data-w="100"></i></div></div>
+        <div class="stage" style="--c:#3f8de6"><span>Published a contact address</span><b data-n="33">0</b><div class="bar"><i data-w="30.6"></i></div></div>
+        <div class="stage" style="--c:#22a77d"><span>Strong fit, personal line written</span><b data-n="21">0</b><div class="bar"><i data-w="19.4"></i></div></div>
+        <div class="stage" style="--c:#ea4b50"><span>Sent on day one</span><b data-n="10">0</b><div class="bar"><i data-w="9.3"></i></div></div>
+        <div class="note">Every address is checked before sending: 2 failed and were dropped, and 9 that can't be confirmed are held until a confirmable address turns up.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Software engineering ===== -->
+  <div data-show="sde">
+    <section>
+      <div class="sec-head"><h2>Experience</h2><span class="mono">01</span></div>
+      <div class="item">
+        <div class="when mono">May – Jul 2026<br>Remote</div>
+        <div>
+          <h3>Technology Intern <small>· IndiaUnbox</small></h3>
+          <ul>
+            <li>Built an 8-stage Python data-collection pipeline (Selenium, Playwright, aiohttp) that gathered supplier data from B2B directories including IndiaMART and ThomasNet, processing <b class="num">10,000+ records</b>.</li>
+            <li>Implemented a <b class="num">50-worker asyncio pool</b> over a shared task queue so pages were fetched and parsed concurrently instead of one at a time.</li>
+            <li>Cleaned, deduplicated and validated the records with Pandas into structured datasets for the sourcing team.</li>
+            <li>Automated daily company LinkedIn posts with a Make.com workflow fed by a 28-post content queue.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Projects</h2><span class="mono">02</span></div>
+      <div class="item">
+        <div class="when mono">2026</div>
+        <div>
+          <h3>Automated video publishing pipeline</h3>
+          <ul>
+            <li>Writes scripts, generates voice-over and word-timed captions, renders videos and image posts, and publishes to Instagram <b class="num">3 times a day</b>.</li>
+            <li>Ran as scheduled GitHub Actions jobs with keyless Google Cloud auth (Workload Identity Federation) and Cloud Storage hosting, with no local machine.</li>
+            <li>Decoupled generation and publishing through a Git-tracked JSON queue so neither stage blocks the other.</li>
+          </ul>
+          <div class="stack mono">Node.js · GitHub Actions · Google Cloud · Instagram Graph API · FFmpeg</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when mono">2026</div>
+        <div>
+          <h3>Outbound engine</h3>
+          <ul>
+            <li>Python CLI that sources hiring startups, extracts published contact addresses, verifies each mailbox through the Verifalia API and queues one personalised email per company.</li>
+            <li>Sends through Gmail on a schedule with a daily cap, random spacing, threaded follow-ups, a do-not-contact list and an automatic pause if bounces pass 5%.</li>
+          </ul>
+          <div class="stack mono">Python · REST APIs · JSONL state · scheduled jobs</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when mono">2025</div>
+        <div>
+          <h3>NeuroSWAY <small>· real-time gait analysis and fall detection</small></h3>
+          <ul>
+            <li>Video system that tracks body pose to detect posture changes and potential falls.</li>
+            <li>Extracts <b class="num">30 biomechanical features per frame at ~20–30 FPS</b> for time-series analysis.</li>
+          </ul>
+          <div class="stack mono">Python · OpenCV · MediaPipe</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when mono">Jan 2025</div>
+        <div>
+          <h3>Gurguram <small>· mentor–mentee web app · 1st place, Hackin' Winters</small></h3>
+          <ul>
+            <li>Implemented user login and integrated the Zoom SDK for in-app video meetings; built the backend API integration for the winning entry.</li>
+          </ul>
+          <div class="stack mono">JavaScript · Node.js · REST APIs · Zoom SDK</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Skills</h2><span class="mono">03</span></div>
+      <div class="skills">
+        <div class="skill"><h4>Languages</h4><div class="chips"><span>C++</span><span>Python</span><span>JavaScript</span><span>SQL</span><span>C</span></div></div>
+        <div class="skill"><h4>Fundamentals</h4><div class="chips"><span>Data Structures &amp; Algorithms</span><span>OOP</span><span>DBMS</span><span>Operating Systems</span></div></div>
+        <div class="skill"><h4>Frameworks &amp; libraries</h4><div class="chips"><span>React</span><span>Next.js</span><span>Node.js</span><span>asyncio</span><span>Selenium</span><span>Playwright</span><span>Pandas</span><span>OpenCV</span></div></div>
+        <div class="skill"><h4>Data &amp; tools</h4><div class="chips"><span>MongoDB</span><span>MySQL</span><span>Git</span><span>GitHub Actions</span><span>Google Cloud</span><span>FFmpeg</span><span>Linux shell</span></div></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== Business development ===== -->
+  <div data-show="bd">
+    <section>
+      <div class="sec-head"><h2>Selected work</h2><span class="mono">01</span></div>
+      <div class="item">
+        <div class="when mono">Oct 2026</div>
+        <div>
+          <h3>Outbound engine <small>· designed and ran it</small></h3>
+          <ul>
+            <li>Built a repeatable outbound process: screen hiring startups, find the address each company publishes, confirm the mailbox, write one line specific to that company, send with a single follow-up and track replies.</li>
+            <li>First campaign: <b class="num">108 companies screened → 33 with a published address → 21 strong fits → 10 sent</b> on day one.</li>
+            <li>Set the rules myself: founders first, confirmed addresses only, an opt-out line on every email and a do-not-contact list that's honoured automatically.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when mono">May – Jul 2026</div>
+        <div>
+          <h3>Technology Intern <small>· IndiaUnbox (sourcing for global buyers)</small></h3>
+          <ul>
+            <li>Built the supplier database behind the sourcing team: <b class="num">10,000+ supplier records</b> collected from IndiaMART and ThomasNet, cleaned, deduplicated and validated.</li>
+            <li>Automated the company's LinkedIn page for lead generation: a daily post for two weeks from a 28-post queue covering QC, MOQs, landed cost, payment terms and Incoterms.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when mono">2026</div>
+        <div>
+          <h3>Audience growth on data <small>· my own YouTube &amp; Instagram channels</small></h3>
+          <ul>
+            <li>Pick niches and topics by outlier analysis: videos scored by views against channel size across hundreds of examples.</li>
+            <li>Tested formats instead of guessing: original code-animated reels got <b class="num">~7× the views</b> of the earlier format and cut the skip rate from <b class="num">58% to 25%</b>.</li>
+            <li>Production runs on my own automated pipeline at <b class="num">under $1 a video</b>.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="item">
+        <div class="when mono">2025</div>
+        <div>
+          <h3>Co-author <small>· Routledge (Taylor &amp; Francis)</small></h3>
+          <ul><li>“AI-Driven Performance Management and Appraisal Systems.”</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Strengths</h2><span class="mono">02</span></div>
+      <div class="skills">
+        <div class="skill"><h4>Prospecting</h4><div class="chips"><span>Lead research</span><span>ICP and fit scoring</span><span>Email verification</span><span>Decision-maker targeting</span></div></div>
+        <div class="skill"><h4>Outreach</h4><div class="chips"><span>Cold email copy</span><span>Personalisation at scale</span><span>Follow-up cadence</span><span>Reply tracking</span></div></div>
+        <div class="skill"><h4>Growth &amp; analysis</h4><div class="chips"><span>Funnel metrics</span><span>A/B tests</span><span>Python &amp; Pandas</span><span>SQL</span><span>Content marketing</span></div></div>
+        <div class="skill"><h4>Automation</h4><div class="chips"><span>Make.com</span><span>Python scripts</span><span>Gmail &amp; APIs</span><span>Scheduled workflows</span></div></div>
+      </div>
+    </section>
+  </div>
+
+  <section>
+    <div class="sec-head"><h2>Education</h2><span class="mono">—</span></div>
+    <div class="item">
+      <div class="when mono">2023 – 2027</div>
+      <div><h3>B.Tech, Information Technology <small>· Jaypee Institute of Information Technology, Noida · CGPA 7.74</small></h3></div>
+    </div>
+    <div class="item">
+      <div class="when mono">2023 – 2024</div>
+      <div><h3>BS in Data Science, Foundation Level <small>· IIT Madras (online)</small></h3></div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <h2 data-show="sde">Hiring an SDE intern or new grad?</h2>
+    <h2 data-show="bd">Need someone who builds pipeline, not just lists?</h2>
+    <div class="meta" style="margin:0">
+      <a class="btn solid" href="mailto:agrvasu05@gmail.com?subject=Hi%20Vasu">Email me</a>
+      <a class="btn" href="../">See the content engine →</a>
+    </div>
+  </div>
+
+  <footer class="mono"><span>© 2026 Vasu Agrawal</span><span>Available as an intern now, full-time from mid-2027.</span></footer>
+</main>
+
+<script>
+  // ----- role switch (also reachable as #sde and #bd) -----
+  var body = document.body;
+  function setRole(role, push) {
+    if (role !== "sde" && role !== "bd") role = "sde";
+    body.dataset.role = role;
+    document.querySelectorAll(".switch button").forEach(function (b) { b.setAttribute("aria-pressed", b.dataset.role === role); });
+    document.title = "Vasu Agrawal · " + (role === "sde" ? "Software Engineering" : "Business Development");
+    if (push) history.replaceState(null, "", "#" + role);
+    if (role === "bd") runFunnel(); else bootTerminal();
+  }
+  document.querySelectorAll(".switch button").forEach(function (b) {
+    b.addEventListener("click", function () { setRole(b.dataset.role, true); });
+  });
+  addEventListener("hashchange", function () { setRole(location.hash.slice(1)); });
+
+  // ----- BD funnel: bars grow and numbers count up -----
+  function runFunnel() {
+    var bars = document.querySelectorAll("#funnel .bar i"), nums = document.querySelectorAll("#funnel b[data-n]");
+    bars.forEach(function (i) { i.style.width = "0"; });
+    requestAnimationFrame(function () { requestAnimationFrame(function () {
+      bars.forEach(function (i, k) { setTimeout(function () { i.style.width = i.dataset.w + "%"; }, k * 140); });
+    }); });
+    nums.forEach(function (b, k) {
+      var n = +b.dataset.n, t0 = performance.now() + k * 140;
+      (function tick(now) {
+        var p = Math.min(1, Math.max(0, (now - t0) / 1100));
+        b.textContent = Math.round(n * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(tick);
+      })(performance.now());
+    });
+  }
+
+  // ----- SDE terminal -----
+  var out = document.getElementById("out"), input = document.getElementById("cmd"), booted = false;
+  var C = {
+    help: "commands: <span class='k'>whoami</span>  <span class='k'>skills</span>  <span class='k'>projects</span>  <span class='k'>experience</span>  <span class='k'>resume</span>  <span class='k'>contact</span>  <span class='k'>bd</span>  <span class='k'>clear</span>",
+    whoami: "Vasu Agrawal · B.Tech IT, JIIT Noida (2027) · CGPA 7.74\nDSA in C++, everything else in Python and JavaScript.",
+    skills: "languages   C++  Python  JavaScript  SQL  C\nweb         React  Next.js  Node.js  REST\ndata        MongoDB  MySQL  Pandas\ninfra       Git  GitHub Actions  Google Cloud  FFmpeg",
+    projects: "<span class='k'>video-pipeline</span>   scripts → voice → captions → render → Instagram, 3×/day, on GitHub Actions\n<span class='k'>outbound-engine</span>  sources startups, verifies mailboxes, sends with follow-ups\n<span class='k'>neurosway</span>        real-time fall detection, 30 features/frame at ~20–30 FPS\n<span class='k'>gurguram</span>         mentor–mentee app with Zoom SDK · 1st place, Hackin' Winters",
+    experience: "IndiaUnbox · Technology Intern · May–Jul 2026\n  10,000+ supplier records · 50-worker asyncio pool · Pandas cleaning",
+    resume: "PDF: <a href='Vasu_Agrawal_SDE_Resume.pdf' download>Vasu_Agrawal_SDE_Resume.pdf</a>",
+    contact: "<a href='mailto:agrvasu05@gmail.com'>agrvasu05@gmail.com</a> · <a href='https://www.linkedin.com/in/vasu-agrawal-ba985628b'>linkedin</a> · <a href='https://github.com/agrvasu05'>github</a>",
+  };
+  function print(html, cls) { var d = document.createElement("div"); if (cls) d.className = cls; d.innerHTML = html; out.appendChild(d); out.scrollTop = out.scrollHeight; }
+  function run(cmd) {
+    cmd = cmd.trim().toLowerCase();
+    print("<span class='p'>❯</span> " + cmd.replace(/[<>&]/g, ""));
+    if (!cmd) return;
+    if (cmd === "clear") { out.innerHTML = ""; return; }
+    if (cmd === "bd" || cmd === "business") { setRole("bd", true); return; }
+    print(C[cmd] || "<span class='d'>command not found: " + cmd.replace(/[<>&]/g, "") + " · try help</span>");
+  }
+  function typeCmd(cmd, done) {
+    var i = 0;
+    (function step() { input.value = cmd.slice(0, ++i); if (i < cmd.length) setTimeout(step, 55); else setTimeout(function () { input.value = ""; run(cmd); done && done(); }, 260); })();
+  }
+  function bootTerminal() {
+    if (booted) return; booted = true;
+    var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) { run("whoami"); run("projects"); print("<span class='d'>type help to see more</span>"); return; }
+    setTimeout(function () { typeCmd("whoami", function () { setTimeout(function () { typeCmd("projects", function () { print("<span class='d'>your turn: type help</span>"); }); }, 500); }); }, 450);
+  }
+  document.getElementById("prompt").addEventListener("submit", function (e) { e.preventDefault(); run(input.value); input.value = ""; });
+
+  setRole(location.hash.slice(1) || "sde");
+</script>
+</body>
+</html>
